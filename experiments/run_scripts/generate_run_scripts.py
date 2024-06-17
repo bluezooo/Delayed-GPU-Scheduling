@@ -1,33 +1,34 @@
 # 
-# Usage: python3 generate_run_scripts.py > run_scripts.sh
+# Usage: python3.8 generate_run_scripts.py > run_scripts.sh
 
 
-DATE = "2023_0511" # Used as the folder name under experiments/ to hold all log results. To avoid collision of repeated experiments, may change date or append _v1, _v2, etc.
+DATE = "2024_0612" # Used as the folder name under experiments/ to hold all log results. To avoid collision of repeated experiments, may change date or append _v1, _v2, etc.
 REMARK = "Artifacts"
-REPEAT =10 # Number of repetitive experiments.
+# REPEAT =10 # Number of repetitive experiments.
+REPEAT = 2
 FILELIST = [
     #: Main results in Fig. 7 and 9
     "data/openb_pod_list_default",
     #: Fig. 14 Various proportion of non-GPU tasks
     "data/openb_pod_list_cpu050",
-    "data/openb_pod_list_cpu100",
-    "data/openb_pod_list_cpu200",
-    "data/openb_pod_list_cpu250",
-    #: Fig. 11 Various proportion of GPU-sharing tasks
+    # "data/openb_pod_list_cpu100",
+    # "data/openb_pod_list_cpu200",
+    # "data/openb_pod_list_cpu250",
+    # #: Fig. 11 Various proportion of GPU-sharing tasks
     "data/openb_pod_list_gpushare100",
-    "data/openb_pod_list_gpushare40",
-    "data/openb_pod_list_gpushare60",
-    "data/openb_pod_list_gpushare80",
-    #: Fig. 13 Various proportion of tasks with GPU-type constraints
+    # "data/openb_pod_list_gpushare40",
+    # "data/openb_pod_list_gpushare60",
+    # "data/openb_pod_list_gpushare80",
+    # #: Fig. 13 Various proportion of tasks with GPU-type constraints
     "data/openb_pod_list_gpuspec10",
-    "data/openb_pod_list_gpuspec20",
-    "data/openb_pod_list_gpuspec25",
-    "data/openb_pod_list_gpuspec33",
-    #: Fig. 12 Various proportion of multi-GPU tasks
+    # "data/openb_pod_list_gpuspec20",
+    # "data/openb_pod_list_gpuspec25",
+    # "data/openb_pod_list_gpuspec33",
+    # #: Fig. 12 Various proportion of multi-GPU tasks
     "data/openb_pod_list_multigpu20",
-    "data/openb_pod_list_multigpu30",
-    "data/openb_pod_list_multigpu40",
-    "data/openb_pod_list_multigpu50",
+    # "data/openb_pod_list_multigpu30",
+    # "data/openb_pod_list_multigpu40",
+    # "data/openb_pod_list_multigpu50",
 ]
 
 AllMethodList = [
@@ -104,7 +105,7 @@ def generate_run_scripts(asyncc=True, parallel=16):
                     outstr = "# %s, %s, %s, %s, %s @ %s\n" % (id, policy, gsm, dem, nm, filename)
                     outstr += 'EXPDIR="experiments/%s/%s/%s/%s/%s' % (DATE, filename, dir_name, tune_ratio, tune_seed)
                     outstr += '" && mkdir -p ${EXPDIR} && touch "${EXPDIR}/terminal.out" && '
-                    outstr += 'python3 scripts/generate_config_and_run.py -d "${EXPDIR}" '
+                    outstr += 'python3.8 scripts/generate_config_and_run.py -d "${EXPDIR}" '
                     outstr += '-e -b '
                     outstr += '-f %s ' % file
                     outstr += '-%s 1000 ' % policy
@@ -117,7 +118,7 @@ def generate_run_scripts(asyncc=True, parallel=16):
                     outstr += '-y "${EXPDIR}/snapshot/yaml" ' if OUTPUT_YAML else ""
                     outstr += '-z "${EXPDIR}/snapshot/ds01" '
                     outstr += '| tee -a "${EXPDIR}/terminal.out" '
-                    outstr += '&& python3 scripts/analysis.py -f -g ${EXPDIR} '
+                    outstr += '&& python3.8 scripts/analysis.py -f -g ${EXPDIR} '
                     outstr += '| tee -a "${EXPDIR}/terminal.out" '
                     if asyncc:
                         outstr += " &"

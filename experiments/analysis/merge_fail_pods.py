@@ -1,11 +1,11 @@
 import os
 import pandas as pd
 from pathlib import Path
-
+import sys
 IN_FILE="analysis_fail.out"
 OUT_CSV="analysis_fail.csv"
 RESULTDIR="analysis_results"
-DATADIR="data"
+DATADIR = sys.argv[1]
 
 filepath = os.path.abspath(__file__)
 root = Path(filepath).parents[1] # 0524
