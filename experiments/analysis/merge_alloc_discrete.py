@@ -93,6 +93,7 @@ for fdir in fileDirs:
                     df = pd.read_csv(afile)
                     df.columns = [x.split('-')[-1] for x in df.columns]
                     dfd = df.to_dict(orient="list")
+                    ## df [used_nodes,used_gpus,used_gpu_milli,total_gpus,arrived_gpu_milli]
 
                     total_gpu_num = df.total_gpus.values[0]
                     df['arrive_ratio'] = df.arrived_gpu_milli / total_gpu_num / 10
