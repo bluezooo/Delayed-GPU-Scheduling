@@ -1,9 +1,9 @@
 #!/bin/bash
-data="2024_0612"
-python3 merge_alloc_discrete.py "$data" &
-python3 merge_frag_discrete.py "$data" &
-python3 merge_frag_ratio_discrete.py "$data" &
-python3 merge_fail_pods.py "$data" &
+data="2024_0621"
+# python3 merge_alloc_discrete.py "$data" &
+# python3 merge_frag_discrete.py "$data" &
+# python3 merge_frag_ratio_discrete.py "$data" &
+# python3 merge_fail_pods.py "$data" &
 
 
 

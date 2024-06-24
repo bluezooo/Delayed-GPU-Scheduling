@@ -26,11 +26,13 @@ SCORE_POLICY_ABBR = {
     "GpuPackingScore":    "GpuPacking",
     "BestFitScore":       "BestFit",
     "FGDScore":           "FGD",
+    "DelayScore":         "Delay",
 }
 
 SCORE_PLUGINS_WITH_DIM_NORM_GPU_METHOD = [
     "DotProductScore", # dot product
     "FGDScore",        # FGD
+    "DelayScore",      # Delay
 ]
 SCORE_PLUGINS_WITH_PRE_FILTER = [
 ]
@@ -209,6 +211,7 @@ profiles:
           - name: GpuPackingScore
           - name: BestFitScore
           - name: FGDScore
+          - name: DelayScore
           # 
           - name: ImageLocality
           - name: NodeAffinity

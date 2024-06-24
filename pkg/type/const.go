@@ -11,6 +11,8 @@ const (
 	BestFitScorePluginName       = "BestFitScore"
 	FGDScorePluginName           = "FGDScore"
 
+	DelayScorePluginName = "DelayScore"
+
 	NewNodeNamePrefix    = "simon"
 	DefaultSchedulerName = "simon-scheduler"
 
