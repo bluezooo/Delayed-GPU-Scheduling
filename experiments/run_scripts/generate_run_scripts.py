@@ -2,33 +2,33 @@
 # Usage: python3.8 generate_run_scripts.py > run_scripts.sh
 
 
-DATE = "2024_0621" # Used as the folder name under experiments/ to hold all log results. To avoid collision of repeated experiments, may change date or append _v1, _v2, etc.
+DATE = "2024_0626" # Used as the folder name under experiments/ to hold all log results. To avoid collision of repeated experiments, may change date or append _v1, _v2, etc.
 REMARK = "Artifacts"
 # REPEAT =10 # Number of repetitive experiments.
-REPEAT = 2
+REPEAT = 1
 FILELIST = [
     #: Main results in Fig. 7 and 9
     "data/openb_pod_list_default",
     #: Fig. 14 Various proportion of non-GPU tasks
-    # "data/openb_pod_list_cpu050",
-    # "data/openb_pod_list_cpu100",
-    # "data/openb_pod_list_cpu200",
-    # "data/openb_pod_list_cpu250",
+    "data/openb_pod_list_cpu050",
+    "data/openb_pod_list_cpu100",
+    "data/openb_pod_list_cpu200",
+    "data/openb_pod_list_cpu250",
     # #: Fig. 11 Various proportion of GPU-sharing tasks
-    # "data/openb_pod_list_gpushare100",
-    # "data/openb_pod_list_gpushare40",
-    # "data/openb_pod_list_gpushare60",
-    # "data/openb_pod_list_gpushare80",
+    "data/openb_pod_list_gpushare100",
+    "data/openb_pod_list_gpushare40",
+    "data/openb_pod_list_gpushare60",
+    "data/openb_pod_list_gpushare80",
     # #: Fig. 13 Various proportion of tasks with GPU-type constraints
-    # "data/openb_pod_list_gpuspec10",
-    # "data/openb_pod_list_gpuspec20",
-    # "data/openb_pod_list_gpuspec25",
-    # "data/openb_pod_list_gpuspec33",
+    "data/openb_pod_list_gpuspec10",
+    "data/openb_pod_list_gpuspec20",
+    "data/openb_pod_list_gpuspec25",
+    "data/openb_pod_list_gpuspec33",
     # #: Fig. 12 Various proportion of multi-GPU tasks
-    # "data/openb_pod_list_multigpu20",
-    # "data/openb_pod_list_multigpu30",
-    # "data/openb_pod_list_multigpu40",
-    # "data/openb_pod_list_multigpu50",
+    "data/openb_pod_list_multigpu20",
+    "data/openb_pod_list_multigpu30",
+    "data/openb_pod_list_multigpu40",
+    "data/openb_pod_list_multigpu50",
 ]
 
 AllMethodList = [

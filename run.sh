@@ -1,22 +1,22 @@
-# bin/simon apply --extended-resources "gpu" \
-#                   -f data/node_yaml/openb_node_list_gpu_node.yaml \
-#                   -s example/test-scheduler-config.yaml
+# $ bin/simon apply --extended-resources "gpu" \
+                #   -f example/test-cluster-config.yaml \
+                #   -s example/test-scheduler-config.yaml
 
 
 #Run test cases
-
+data="2024_0626"
 
 cd /home/wangyuhang/simulator/experiments
-python run_scripts/generate_run_scripts.py > run_scripts/run_scripts_0621.sh
+python run_scripts/generate_run_scripts.py > run_scripts/run_scripts_"$data".sh
 cd ..
-cat experiments/run_scripts/run_scripts_0621.sh | xargs --max-procs=16 -I CMD bash -c CMD
+cat experiments/run_scripts/run_scripts_"$data".sh | xargs --max-procs=18 -I CMD bash -c CMD
 
 
 # Analysis and plot
 
 cd /home/wangyuhang/simulator/experiments/analysis
 # bash analysis_merge.sh
-data="2024_0621"
+
 
 python3 merge_alloc_discrete.py "$data" &
 python3 merge_frag_discrete.py "$data" &

@@ -1,0 +1,20 @@
+
+===
+# log-cc_owcpu050_dr0.0_tn1.3_ts42_if1.0_md5fa9.yaml-sc_Random1000_deshare_gsrandom_mdf81a.yaml.log:
+time="2024-06-24T18:36:41+08:00" level=info msg="========== Cluster Analysis Results (InitSchedule) =========="
+time="2024-06-24T18:36:41+08:00" level=info msg="Allocation Ratio:\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="    MilliCpuLeft: 67.1% (71838812/107018000)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="    Memory  : 52.2% (275898572996608/528302452244480)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="    Gpu     : 98.6% (6122/6212)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="    MilliGpu: 91.4% (5677510/6212000)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="q1_lack_both : 198.74 x 10^3 (37.18%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="q2_lack_gpu  : 155.38 x 10^3 (29.07%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="q3_satisfied :   6.33 x 10^3 ( 1.18%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="q4_lack_cpu  : 146.39 x 10^3 (27.39%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="xl_satisfied :   6.06 x 10^3 ( 1.13%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="xr_lack_cpu  :  21.58 x 10^3 ( 4.04%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="no_access    :   0.00 x 10^3 ( 0.00%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg=--------------------
+time="2024-06-24T18:36:41+08:00" level=info msg="idle_gpu_milli: 534.49 x 10^3 (100.0%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="frag_gpu_milli: 528.16 x 10^3 (98.82%)\n"
+time="2024-06-24T18:36:41+08:00" level=info msg="=============================================="
